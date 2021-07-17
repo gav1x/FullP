@@ -17,3 +17,5 @@ Lembrando que o script estará disponível 20 dias após a postagem do script.
  pip3 install -r requirements.txt
  
  python3 FullP.py
+  
+![Screenshot](https://cdn.discordapp.com/attachments/865484655314731019/865895552385679400/unknown.png)
