@@ -24,7 +24,7 @@ def menu():
 Though I walk in the valley of the shadow of death, I will not fear evil, for you are with me.
 ==============================================================================================
 
-{white}[1] {green}NUMERO\n{white}[2] {green}CPF\n{white}[3] {green}NOME\n{white}[4] {green}PESSOAS CEP\n{white}[5] {green}CEP \n{white}[6] {green}RG\n{white}[7] {green}EMAIL\n\n{magenta}~> '''))
+{white}[1] {green}NUMERO\n{white}[2] {green}CPF\n{white}[3] {green}NOME\n{white}[4] {green}PESSOAS CEP\n{white}[5] {green}CEP \n{white}[6] {green}RG\n{white}[7] {green}EMAIL\n{white}[8] {green}CNPJ\n\n{magenta}~> '''))
         
     if option == 1:
                 
@@ -44,7 +44,7 @@ Though I walk in the valley of the shadow of death, I will not fear evil, for yo
                 print(req.text)                    
             else:
                     print(Fore.RED + '[!] API OFFLINE')               
-            ret = int(input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> '))
+            ret = int(input(f'\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n{magenta}~> '))
             if ret == 1:
                 menu()      
             else:
@@ -78,7 +78,7 @@ Though I walk in the valley of the shadow of death, I will not fear evil, for yo
                 print(req.text)
             else:
                 print(Fore.RED + '[!] API OFFLINE')                
-            ret = int(input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> '))
+            ret = int(input(f'\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n{magenta}~> '))
             if ret == 1:
                 menu()               
             else:
@@ -108,7 +108,7 @@ Though I walk in the valley of the shadow of death, I will not fear evil, for yo
                 print(req.text)       
             else:
                 print(Fore.RED + '[!] API OFFLINE')   
-            ret = int(input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> '))
+            ret = int(input(f'\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n{magenta}~> '))
             if ret == 1:
                 menu()   
             else:
@@ -143,7 +143,7 @@ Though I walk in the valley of the shadow of death, I will not fear evil, for yo
                 print(req.text)
             else:
                 print(Fore.RED + '[!] API OFFLINE')
-            ret = int(input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> '))
+            ret = int(input(f'\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n{magenta}~> '))
             if ret == 1:
                 menu()
             else:
@@ -185,7 +185,7 @@ Though I walk in the valley of the shadow of death, I will not fear evil, for yo
                 time.sleep(1)
                 menu()
                 
-            ret = int(input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> '))
+            ret = int(input(f'\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n{magenta}~> '))
             if ret == 1:
                 menu()
             else:
@@ -215,7 +215,7 @@ Though I walk in the valley of the shadow of death, I will not fear evil, for yo
                 print(req.text)
             else:
                     print(Fore.RED + '[!] API OFFLINE')
-            ret = int(input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> '))
+            ret = int(input(f'\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n{magenta}~> '))
             if ret == 1:
                 menu()
             else:
@@ -245,7 +245,7 @@ Though I walk in the valley of the shadow of death, I will not fear evil, for yo
                 print(req.text)
             else:
                     print(Fore.RED + '[!] API OFFLINE')
-            ret = int(input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> '))
+            ret = int(input(f'\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n{magenta}~> '))
             if ret == 1:
                 menu()
             else:
@@ -256,6 +256,45 @@ Though I walk in the valley of the shadow of death, I will not fear evil, for yo
                 exit()
         if __name__ == '__main__':
             email()
+            
+    elif option == 8:
+            
+        def cep():      
+            os.system('cls' if os.name == 'nt' else 'clear')  
+            cnpj = input(f'{green}DIGITE O CNPJ SEM PONTOS ~> ').strip()            
+            os.system('cls' if os.name == 'nt' else 'clear')
+            url = 'https://consulta-cnpj-gratis.p.rapidapi.com/companies/{}'.format(cnpj)
+            headers =  {
+                'x-rapidapi-key': '574b13cadbmsh76d5927b45dc8cep17d937jsn0eb56f2d5a5c',
+                'x-rapidapi-host': 'consulta-cnpj-gratis.p.rapidapi.com'
+            }
+            req = requests.get(url=url, headers=headers)
+            data = req.json()
+            if 'error' not in data:
+                print(Fore.GREEN + '\n[+] nome: {}'.format(data['name']))
+                print('[+] apelido: {}'.format(data['alias']))
+                print('[+] cnpj: {}'.format(data['tax_id']))
+                print('[+] modelo federal: {}'.format(data['type']))
+                print('[+] fundado: {}'.format(data['founded']))
+                print('[+] tamanho: {}'.format(data['size']))
+                print('[+] capital: {}'.format(data['capital']))
+                print('[+] email: {}'.format(data['email']))
+                print('[+] telefone: {}'.format(data['phone']))
+                print('[+] telefone alternativo: {}'.format(data['phone_alt']))
+                print('[+] entidade federal: {}\n'.format(data['federal_entity']))
+            else:
+                print(Fore.RED + '[!] API OFFLINE')
+            ret = int(input(f'\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n{magenta}~> '))
+            if ret == 1:
+                menu()
+            else:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print('Saindo....')
+                time.sleep(1)
+                os.system('cls' if os.name == 'nt' else 'clear')
+                exit()
+        if __name__ == '__main__':
+            cep()
             
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
