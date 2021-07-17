@@ -1,5 +1,5 @@
 # FullP
-Pegueno painel de consulta básica
+Pequeno painel de consulta básica
 
 Lembrando que o script estará disponível 20 dias após a postagem do script.
 
