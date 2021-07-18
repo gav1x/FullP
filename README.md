@@ -18,4 +18,4 @@ Lembrando que o script estará disponível 20 dias após a postagem do script.
  
  python3 FullP.py
   
-![Screenshot](https://cdn.discordapp.com/attachments/865484655314731019/865895552385679400/unknown.png)
+![Screenshot](https://cdn.discordapp.com/attachments/866286772031324222/866286787144318996/unknown.png)
