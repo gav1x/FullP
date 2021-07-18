@@ -18,7 +18,6 @@ def limpar():
 def numero():
 
     limpar(); numero: str = (input('NUMERO ~> ')); limpar()
-    
     url: str = 'https://consulta-numero.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/numero.php'
     params: str = {'consulta': numero}
     headers: str = {
@@ -78,7 +77,6 @@ def cpf():
 def nome():
 
     limpar(); nome: str = (input('NOME ~> ')); limpar()
-    
     url: str = 'https://consulta-nome1.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/nome.php' 
     params: str = {'consulta': nome}
     headers: str = {
@@ -175,7 +173,6 @@ def cep():
 def rg():
 
     limpar(); rg: str = (input('DIGITE O RG SEM PONTOS ~> ')); limpar()
-    
     url: str = 'https://consulta-rg.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/rg.php'
     params: str = {'consulta': rg}
     headers: str = {
@@ -204,7 +201,6 @@ def rg():
 def email():
 
     limpar(); email: str = (input('EMAIL ~> ')); limpar()
-    
     url: str = 'https://consulta-e-mail.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/email.php'
     params: str = {'consulta': email}
     headers: str = {
@@ -233,7 +229,6 @@ def email():
 def cnpj():
 
     limpar(); cnpj: str = (input('DIGITE O CNPJ SEM PONTOS ~> ')); limpar()
-    
     url: str = 'https://consulta-cnpj-gratis.p.rapidapi.com/companies/{}'.format(cnpj)
     params: str = {'consulta': cnpj}
     headers: str = {
