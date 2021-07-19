@@ -10,7 +10,7 @@ Lembrando que o script estará disponível 20 dias após a postagem do script.
   </a>
 </p
  
- git clone https://github.com/gav1x/FullP
+ git clone https://github.com/gav1x/FullP.git
  
  cd FullP
  
