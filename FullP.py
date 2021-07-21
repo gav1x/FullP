@@ -93,7 +93,7 @@ def nome():
     }   
       
     req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
-    if 'A Consulta Esta Funcionando Normalmente' in ret:
+    if 'Por Favor' in ret:
         print('[!] O Nome Inserido Esta Muito Curto, Por Favor Coloque Mais Alguma Informacao Como Sobrenome'); time.sleep(2);  limpar(); buscar()
         
     else:
