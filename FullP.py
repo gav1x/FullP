@@ -55,7 +55,7 @@ def numero():
 def cpf():
 
     limpar(); cpf: str = (input('cpf ~> ')); limpar()
-    if len(p_cep) != 11:
+    if len(cpf) != 11:
         print('[!] CPF INVALIDO'); time.sleep(1); limpar(); buscar()
         
     url: str = 'https://consulta-cpf2.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/cpf.php' 
@@ -71,7 +71,7 @@ def cpf():
         print('[!] A Consulta Esta Funcionando Normalmente, Porem O Cpf Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        arquivo = open(f'cpf.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        arquivo = open(f'cpf {cpf}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
