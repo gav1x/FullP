@@ -1,78 +1,86 @@
 import requests
 import os
 import time
-from colorama import Fore
+import sys
+from colorama import Fore, Style
+from random import choice
+
 
 
 def banner():
     
-    print(Fore.RED + '''
+    cor = [Fore.RED]
+    banner = r"""
 - By gav1x
-- GitHub: https://github.com/Gav1x
-- Greetz: DevNoias - Mr Osama - Bugea1s - Fz1n - Tr4xb0y - V4p0r''')
+- GitHub: https://github.com/gav1x
+- Greetz: DevNoias - Mr Osama - Bugea1s - Fz1n - Tr4xb0y - V4p0r                 
+    """
+    n = 0
+    for char in banner:
+        sys.stdout.write(f"{choice(cor)}{char}{Style.RESET_ALL}")
+        sys.stdout.flush()
+        n +=1
+        time.sleep(0.007)
 
 def limpar():
     
     os.system('cls' if os.name == 'nt' else 'clear')
-    
+
 def numero():
 
-    limpar(); numero: str = (input('NUMERO ~> ')); limpar()
-    url: str = 'https://consulta-numero.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/numero.php'
+    limpar(); numero: str = (input('numero ~> ')); limpar()
+    url: str = 'https://consulta-numero.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/numero.php' 
     params: str = {'consulta': numero}
     headers: str = {
-    'x-rapidapi-key': 'a5c0d365camshf9426e6fe320fabp1aaeb0jsnb37aee595857',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
     'x-rapidapi-host': 'consulta-numero.p.rapidapi.com'
-    }     
+    }   
+      
     req: str = requests.get(url=url, headers=headers, params=params)
-    
-    code: int = req.status_code
-    if code == 200:
-        print(req.text)
+    ret = req.text
+    if 'A Consulta Esta Funcionando Normalmente' in ret:
+        print('[!] A Consulta Esta Funcionando Normalmente, Porem O Telefone Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        print('[!] API OFFLINE'); time.sleep(1); limpar()
-        buscar()
-        
-        
+        arquivo = open(f'numero {numero}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
+    
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
     else:
-        limpar(); print('Saindo....'); time.sleep(1); limpar()
-        exit()
+        limpar(); print('Saindo....'); time.sleep(1); limpar(); exit()
 
 def cpf():
 
-    limpar(); cpf: str = (input('DIGITE O CPF SEM PONTOS ~> ')); limpar()
-    if len(cpf) != 11:
-        print('[!] CPF INVALIDO'); time.sleep(1); limpar()
-        buscar()
+    limpar(); cpf: str = (input('cpf ~> ')); limpar()
+    if len(p_cep) != 11:
+        print('[!] CPF INVALIDO'); time.sleep(1); limpar(); buscar()
         
-    url: str = 'https://consulta-cpf2.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/cpf.php'
+    url: str = 'https://consulta-cpf2.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/cpf.php' 
     params: str = {'consulta': cpf}
     headers: str = {
-    'x-rapidapi-key': 'a5c0d365camshf9426e6fe320fabp1aaeb0jsnb37aee595857',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
     'x-rapidapi-host': 'consulta-cpf2.p.rapidapi.com'
-    }     
-    req: str = requests.get(url=url, headers=headers, params=params)
-    
-    code: int = req.status_code
-    if code == 200:
-        print(req.text)
+    }   
+      
+    req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
+    if 'A Consulta Esta Funcionando Normalmente' in ret:
+        print('[!] A Consulta Esta Funcionando Normalmente, Porem O Cpf Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        print('[!] API OFFLINE'); time.sleep(1); limpar()
-        buscar()
-        
+        arquivo = open(f'cpf.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
+    
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
     else:
-        limpar(); print('Saindo....'); time.sleep(1); limpar()
-        exit()
+        limpar(); print('Saindo....'); time.sleep(1); limpar(); exit()
         
 def nome():
 
@@ -80,66 +88,60 @@ def nome():
     url: str = 'https://consulta-nome1.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/nome.php' 
     params: str = {'consulta': nome}
     headers: str = {
-    'x-rapidapi-key': 'a5c0d365camshf9426e6fe320fabp1aaeb0jsnb37aee595857',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
     'x-rapidapi-host': 'consulta-nome1.p.rapidapi.com'
-    }     
-    req: str = requests.get(url=url, headers=headers, params=params)
-    
-    code: int = req.status_code
-    if code == 200:
-        print(req.text)
+    }   
+      
+    req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
+    if 'A Consulta Esta Funcionando Normalmente' in ret:
+        print('[!] O Nome Inserido Esta Muito Curto, Por Favor Coloque Mais Alguma Informacao Como Sobrenome'); time.sleep(2);  limpar(); buscar()
         
     else:
-        print('[!] API OFFLINE'); time.sleep(1); limpar()
-        buscar()
-        
-        
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
-    if nova_consulta == '1':
-        buscar()
+        arquivo = open(f'{nome}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
-    else:
-        limpar(); print('Saindo....'); time.sleep(1); limpar()
-        exit()
-
-def p_cep():
-
-    limpar(); cep: str = (input('DIGITE O CEP SEM PONTOS ~> ')); limpar()
-    if len(cep) != 8:
-        print('[!] CEP INVALIDO'); time.sleep(1); limpar()
-        buscar()
-    
-    url: str = 'https://consulta-cep1.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/cep.php'
-    params: str = {'consulta': cep}
-    headers: str = {
-    'x-rapidapi-key': 'a5c0d365camshf9426e6fe320fabp1aaeb0jsnb37aee595857',
-    'x-rapidapi-host': 'consulta-cep1.p.rapidapi.com'
-    }     
-    req: str = requests.get(url=url, headers=headers, params=params)
-    
-    code: int = req.status_code
-    if code == 200:
-        print(req.text)
-        
-    else:
-        print('[!] API OFFLINE'); time.sleep(1); limpar()
-        buscar()
-        
-        
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
     else:
-        limpar(); print('Saindo....'); time.sleep(1); limpar()
-        exit()
+        limpar(); print('Saindo....'); time.sleep(1); limpar(); exit()
+        
+def p_cep():
+
+    limpar(); p_cep: str = (input('Digite o cep sem pontos ~> ')); limpar()
+    if len(p_cep) != 8:
+        print('[!] CEP INVALIDO'); time.sleep(1); limpar(); buscar()
+
+    url: str = 'https://consulta-cep1.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/cep.php'
+    params: str = {'consulta': p_cep}
+    headers: str = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
+    'x-rapidapi-host': 'consulta-cep1.p.rapidapi.com'
+    }   
+      
+    req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
+    if 'Por Favor' in ret:
+        print('[!] A Consulta Esta Funcionando Normalmente, Porem O cep Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
+        
+    else:
+        arquivo = open(f'cep {p_cep}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
+    
+    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    if nova_consulta == '1':
+        buscar()    
+    
+    else:
+        limpar(); print('Saindo....'); time.sleep(1); limpar(); exit()
         
 def cep():
 
     limpar(); cep: str = (input('DIGITE O CEP SEM PONTOS ~> ')); limpar()
     if len(cep) != 8:
-        print('[!] CEP INVALIDO'); time.sleep(1); limpar()
-        buscar()
+        print('[!] CEP INVALIDO'); time.sleep(1); limpar(); buscar()
     
     url: str = 'https://viacep.com.br/ws/{}/json/'.format(cep)     
     req: str = requests.get(url=url)
@@ -158,73 +160,66 @@ def cep():
         print('[SIAFI] {}'.format(data['siafi']))
 
     else:
-        print('[!] CEP NAO ENCONTRADO'); time.sleep(1); limpar()
-        buscar()
-        
+        print('[!] CEP NAO ENCONTRADO'); time.sleep(1); limpar(); buscar()
         
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
     else:
-        limpar(); print('Saindo....'); time.sleep(1); limpar()
-        exit()
-
+        limpar(); print('Saindo....'); time.sleep(1); limpar(); exit()
+        
 def rg():
 
-    limpar(); rg: str = (input('DIGITE O RG SEM PONTOS ~> ')); limpar()
+    limpar(); rg: str = (input('rg ~> ')); limpar()
     url: str = 'https://consulta-rg.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/rg.php'
     params: str = {'consulta': rg}
     headers: str = {
-    'x-rapidapi-key': 'a5c0d365camshf9426e6fe320fabp1aaeb0jsnb37aee595857',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
     'x-rapidapi-host': 'consulta-rg.p.rapidapi.com'
-    }     
-    req: str = requests.get(url=url, headers=headers, params=params)
-    
-    code: int = req.status_code
-    if code == 200:
-        print(req.text)
+    }   
+      
+    req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
+    if 'Por Favor' in ret:
+        print('[!] A Consulta Esta Funcionando Normalmente, Porem O rg Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        print('[!] API OFFLINE'); time.sleep(1); limpar()
-        buscar()
-        
-        
+        arquivo = open(f'rg {rg}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
+    
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
     else:
-        limpar(); print('Saindo....'); time.sleep(1); limpar()
-        exit()
+        limpar(); print('Saindo....'); time.sleep(1); limpar(); exit()
         
 def email():
 
-    limpar(); email: str = (input('EMAIL ~> ')); limpar()
+    limpar(); email: str = (input('email ~> ')); limpar()
     url: str = 'https://consulta-e-mail.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/email.php'
     params: str = {'consulta': email}
     headers: str = {
-    'x-rapidapi-key': 'a5c0d365camshf9426e6fe320fabp1aaeb0jsnb37aee595857',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
     'x-rapidapi-host': 'consulta-e-mail.p.rapidapi.com'
-    }     
-    req: str = requests.get(url=url, headers=headers, params=params)
-    
-    code: int = req.status_code
-    if code == 200:
-        print(req.text)
+    }   
+      
+    req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
+    if 'A Consulta Esta Funcionando Normalmente' in ret:
+        print('[!] A Consulta Esta Funcionando Normalmente, Porem O email Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        print('[!] API OFFLINE'); time.sleep(1); limpar()
-        buscar()
-        
-        
+        arquivo = open(f'email {email}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
+    
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
     else:
-        limpar(); print('Saindo....'); time.sleep(1); limpar()
-        exit()
+        limpar(); print('Saindo....'); time.sleep(1); limpar(); exit()
         
 def cnpj():
 
@@ -252,18 +247,15 @@ def cnpj():
         print('[+] entidade federal: {}\n'.format(data['federal_entity']))
         
     else:
-        print('[!] API OFFLINE'); time.sleep(1); limpar()
-        buscar()
-        
+        print('[!] API OFFLINE'); time.sleep(1); limpar(); buscar()
         
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
     else:
-        limpar(); print('Saindo....'); time.sleep(1); limpar()
-        exit()
-  
+        limpar(); print('Saindo....'); time.sleep(1); limpar(); exit()
+        
 def buscar():
 
     ##CORES
