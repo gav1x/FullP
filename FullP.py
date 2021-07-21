@@ -6,7 +6,6 @@ from colorama import Fore, Style
 from random import choice
 
 
-
 def banner():
     
     cor = [Fore.RED]
