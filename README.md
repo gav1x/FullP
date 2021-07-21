@@ -3,6 +3,8 @@ Pequeno painel de consulta básica
 
 Lembrando que o script estará disponível 20 dias após a postagem do script.
 
+[!] Script em manutenção
+
 # Instalação
 <p align="center">
   <a href="https://www.python.org/">
