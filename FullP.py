@@ -42,7 +42,7 @@ def numero():
         print('[!] A Consulta Esta Funcionando Normalmente, Porem O Telefone Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        arquivo = open(f'numero {numero}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        arquivo = open(f'numero ~> {numero}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
@@ -71,7 +71,7 @@ def cpf():
         print('[!] A Consulta Esta Funcionando Normalmente, Porem O Cpf Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        arquivo = open(f'cpf {cpf}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        arquivo = open(f'cpf ~> {cpf}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
@@ -97,7 +97,7 @@ def nome():
         print('[!] O Nome Inserido Esta Muito Curto, Por Favor Coloque Mais Alguma Informacao Como Sobrenome'); time.sleep(2);  limpar(); buscar()
         
     else:
-        arquivo = open(f'{nome}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        arquivo = open(f'nome ~> {nome}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
@@ -126,7 +126,7 @@ def p_cep():
         print('[!] A Consulta Esta Funcionando Normalmente, Porem O cep Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        arquivo = open(f'cep {p_cep}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        arquivo = open(f'cep ~> {p_cep}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
@@ -184,7 +184,7 @@ def rg():
         print('[!] A Consulta Esta Funcionando Normalmente, Porem O rg Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        arquivo = open(f'rg {rg}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        arquivo = open(f'rg ~> {rg}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
@@ -210,7 +210,7 @@ def email():
         print('[!] A Consulta Esta Funcionando Normalmente, Porem O email Inserido Nao Foi Encontrado.'); time.sleep(2);  limpar(); buscar()
         
     else:
-        arquivo = open(f'email {email}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
+        arquivo = open(f'email ~> {email}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
     nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
