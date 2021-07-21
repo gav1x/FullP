@@ -1,9 +1,8 @@
 # FullP
-Pequeno painel de consulta básica
+Pequeno painel de consulta retornando o HTML
 
 Lembrando que o script estará disponível 20 dias após a postagem do script.
 
-[ ! ] Script em manutenção
 
 # Instalação
 <p align="center">
