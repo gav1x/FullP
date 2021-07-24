@@ -31,9 +31,11 @@ def numero():
     url: str = 'https://consulta-numero.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/numero.php' 
     params: str = {'consulta': numero}
     headers: str = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
-    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
-    'x-rapidapi-host': 'consulta-numero.p.rapidapi.com'
+        
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+        'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
+        'x-rapidapi-host': 'consulta-numero.p.rapidapi.com'
+        
     }   
       
     req: str = requests.get(url=url, headers=headers, params=params)
@@ -45,7 +47,7 @@ def numero():
         arquivo = open(f'numero {numero}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    nova_consulta = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
@@ -61,9 +63,11 @@ def cpf():
     url: str = 'https://consulta-cpf2.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/cpf.php' 
     params: str = {'consulta': cpf}
     headers: str = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
-    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
-    'x-rapidapi-host': 'consulta-cpf2.p.rapidapi.com'
+        
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+        'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
+        'x-rapidapi-host': 'consulta-cpf2.p.rapidapi.com'
+        
     }   
       
     req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
@@ -74,7 +78,7 @@ def cpf():
         arquivo = open(f'cpf {cpf}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    nova_consulta = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
@@ -87,9 +91,11 @@ def nome():
     url: str = 'https://consulta-nome1.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/nome.php' 
     params: str = {'consulta': nome}
     headers: str = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
-    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
-    'x-rapidapi-host': 'consulta-nome1.p.rapidapi.com'
+        
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+        'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
+        'x-rapidapi-host': 'consulta-nome1.p.rapidapi.com'
+        
     }   
       
     req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
@@ -100,7 +106,7 @@ def nome():
         arquivo = open(f'nome {nome}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    nova_consulta = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
@@ -116,9 +122,11 @@ def p_cep():
     url: str = 'https://consulta-cep1.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/cep.php'
     params: str = {'consulta': p_cep}
     headers: str = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
-    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
-    'x-rapidapi-host': 'consulta-cep1.p.rapidapi.com'
+        
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+        'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
+        'x-rapidapi-host': 'consulta-cep1.p.rapidapi.com'
+        
     }   
       
     req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
@@ -129,7 +137,7 @@ def p_cep():
         arquivo = open(f'cep {p_cep}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    nova_consulta = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
@@ -161,7 +169,7 @@ def cep():
     else:
         print('[!] CEP NAO ENCONTRADO'); time.sleep(1); limpar(); buscar()
         
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    nova_consulta = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
@@ -174,9 +182,11 @@ def rg():
     url: str = 'https://consulta-rg.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/rg.php'
     params: str = {'consulta': rg}
     headers: str = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
-    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
-    'x-rapidapi-host': 'consulta-rg.p.rapidapi.com'
+        
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+        'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
+        'x-rapidapi-host': 'consulta-rg.p.rapidapi.com'
+        
     }   
       
     req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
@@ -187,7 +197,7 @@ def rg():
         arquivo = open(f'rg {rg}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    nova_consulta = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
@@ -200,9 +210,11 @@ def email():
     url: str = 'https://consulta-e-mail.p.rapidapi.com/apis/astrahvhdeus/Consultas%20Privadas/HTML/email.php'
     params: str = {'consulta': email}
     headers: str = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
-    'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
-    'x-rapidapi-host': 'consulta-e-mail.p.rapidapi.com'
+        
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+        'x-rapidapi-key': '0d66cf70c4msh8e71af69887c685p1a9b2fjsn8fc892e8b730',
+        'x-rapidapi-host': 'consulta-e-mail.p.rapidapi.com'
+        
     }   
       
     req: str = requests.get(url=url, headers=headers, params=params); ret = req.text
@@ -213,7 +225,7 @@ def email():
         arquivo = open(f'email {email}.html', 'w', encoding='utf-8'); arquivo.writelines(ret); arquivo.close()
         print('[+] Sua consulta foi salvo em um arquivo HTML'); time.sleep(2); limpar()
     
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    nova_consulta = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
@@ -226,8 +238,11 @@ def cnpj():
     url: str = 'https://consulta-cnpj-gratis.p.rapidapi.com/companies/{}'.format(cnpj)
     params: str = {'consulta': cnpj}
     headers: str = {
-    'x-rapidapi-key': '574b13cadbmsh76d5927b45dc8cep17d937jsn0eb56f2d5a5c',
-    'x-rapidapi-host': 'consulta-cnpj-gratis.p.rapidapi.com'
+        
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36',
+        'x-rapidapi-key': '574b13cadbmsh76d5927b45dc8cep17d937jsn0eb56f2d5a5c',
+        'x-rapidapi-host': 'consulta-cnpj-gratis.p.rapidapi.com'
+        
     }     
     req: str = requests.get(url=url, headers=headers, params=params)
     
@@ -248,7 +263,7 @@ def cnpj():
     else:
         print('[!] API OFFLINE'); time.sleep(1); limpar(); buscar()
         
-    nova_consulta: int = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
+    nova_consulta = input('\n[?] DESEJA REALIZAR OUTRA CONSULTA?\n\n1 > SIM\n2 > NÃO\n\n~> ') 
     if nova_consulta == '1':
         buscar()    
     
@@ -264,7 +279,7 @@ def buscar():
 
     limpar(); banner()
     
-    option: int = input(f'\n{white}[1] {green}NUMERO\n{white}[2] {green}CPF\n{white}[3] {green}NOME\n{white}[4] {green}PESSOAS CEP\n{white}[5] {green}CEP \n{white}[6] {green}RG\n{white}[7] {green}EMAIL\n{white}[8] {green}CNPJ\n\n{magenta}~> ')
+    option = input(f'\n{white}[1] {green}NUMERO\n{white}[2] {green}CPF\n{white}[3] {green}NOME\n{white}[4] {green}PESSOAS CEP\n{white}[5] {green}CEP \n{white}[6] {green}RG\n{white}[7] {green}EMAIL\n{white}[8] {green}CNPJ\n\n{magenta}~> ')
     if option == '1':
         numero()
     
