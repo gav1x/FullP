@@ -16,3 +16,4 @@
  
  python3 FullP.py
 ```
+**Um pequeno painel de consultas totalmente gratuito.😁**
