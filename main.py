@@ -33,7 +33,7 @@ while(Sair==False):
 		elif op==6:
 			email.consultar()
 		elif op==7:
-			pass
+			cnpj.consultar()
 		elif op==0:
 			ui.clear();Sair=True
 	except:
