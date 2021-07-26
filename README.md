@@ -3,11 +3,8 @@
   <a href="https://www.python.org/">
     <img src="https://img.shields.io/badge/Python-v3-yellow">
   </a>
-</p
-Pequeno painel de consulta retornando o HTML
-
-Lembrando que o script estará disponível 20 dias após a postagem do script.
-
+</p>
+**Um pequeno painel de consultas totalmente gratuito.**
 ![Screenshot](https://cdn.discordapp.com/attachments/866286772031324222/866286787144318996/unknown.png)
 # Instalação💻
 ```
