@@ -14,6 +14,6 @@
  
  pip3 install -r requirements.txt
  
- python3 FullP.py
+ python3 main.py
 ```
 **Um pequeno painel de consultas totalmente gratuito.😁**
