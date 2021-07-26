@@ -4,7 +4,7 @@ def restart():
 try:
 	import colorama, requests
 except:
-	os.system('pip install colorama requests')
+	os.system('pip install -r requirements.txt');restart()
 try:
 	from data import ui, numero, cpf, nome, rg, email, cpnj
 except Exception as e:
