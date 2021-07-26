@@ -1,12 +1,14 @@
 import os, sys
+def restart():
+	python=sys.executable;os.excl(python, python, *sys.argv)
 try:
 	import colorama, requests
 except:
-	os.system('pip install -r requirements.txt')
+	os.system('pip install colorama requests')
 try:
 	from data import ui, numero, cpf, nome, rg, email
 except Exception as e:
-	print('ARQUIVO CORROMPIDO! '+str(e))
+	print('ARQUIVO CORROMPIDO! '+str(e));exit()
 C= "\033[97;1m"
 G = "\033[92;1m"
 P = "\033[1;35m"
