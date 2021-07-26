@@ -6,7 +6,7 @@ try:
 except:
 	os.system('pip install colorama requests')
 try:
-	from data import ui, numero, cpf, nome, rg, email
+	from data import ui, numero, cpf, nome, rg, email, cpnj
 except Exception as e:
 	print('ARQUIVO CORROMPIDO! '+str(e));exit()
 C= "\033[97;1m"
