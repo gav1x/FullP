@@ -25,7 +25,7 @@ def clear():
 	os.system(clean)
 
 def menu(ms0):
-	clear();banner();print(result+ms0)
+	clear();banner();print('\n'+result+ms0)
 	return input(f'\n{C}===> {G}')
 
 def error():
