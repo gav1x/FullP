@@ -6,7 +6,7 @@ try:
 except:
 	os.system('pip install -r requirements.txt');restart()
 try:
-	from data import ui, numero, cpf, nome, rg, email, cpnj
+	from data import ui, numero, cpf, nome, rg, email, cpnj, cep1
 except Exception as e:
 	print('ARQUIVO CORROMPIDO! '+str(e));exit()
 C= "\033[97;1m"
@@ -25,7 +25,7 @@ while(Sair==False):
 		elif op==4:
 			op2=int(ui.menu(ms0=f'\n{C}[{G}1{C}] CEP 1\n{C}[{G}2{C}] CEP 2'))
 			if op2==1:
-				pass
+				cep1()
 			elif op2==2:
 				pass
 		elif op==5:
