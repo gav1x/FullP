@@ -37,4 +37,4 @@ def dialog1():
 
 def dialog2(msg):
 	clear();banner()
-	return input(f'\n{C}====================\n{msg}\n====================\n{C}{G}Deseja fazer uma nova consulta?\n{C}[{G}1{C}] Sim\n[{G}2{C}] Nao\nλ ► {G}')
+	return input(f'\n{C}====================\n{msg}\n====================\n{C}{G}\nDeseja fazer uma nova consulta?\n{C}[{G}1{C}] Sim\n[{G}2{C}] Nao\n\nλ ► {G}')
