@@ -1,6 +1,6 @@
 import requests
 from data import ui
-# Api - https://github.com/p0isonBR/ConsultaCPF
+
 def consultar():
 	Sair=False
 	while(Sair==False):
