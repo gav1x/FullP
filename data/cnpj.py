@@ -8,7 +8,7 @@ def consultar():
 		if 'error' in r:
 			msg='A consulta está funcionando normalmente, porém, o CNPJ inserido não foi encontrado.'
 		else:
-			msgf'''
+			msg=f'''
 Nome - {r['name']}
 Apelido - {r['alias']}
 CNPJ - {r['tax_id']}
