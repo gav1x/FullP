@@ -15,11 +15,11 @@ CNPJ - {r['tax_id']}
 Modelo Federal - {r['type']}
 Fundado - {r['founded']}
 Tamanho - {r['size']}
-Capital -{r['capital']
+Capital -{r['capital']}
 Email - {r['email']}
 Telefone - {r['phone']}
 Telefone Alternativo - {r['phone_alt']}
-Entidade Federal - {r['federal_entity']
+Entidade Federal - {r['federal_entity']}
 			'''
 		op=int(ui.dialog2(msg))
 		if op ==1:
