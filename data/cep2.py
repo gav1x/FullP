@@ -9,7 +9,7 @@ def consultar():
 		if len(cep)!=8:
 			msg='CEP inválido'
 		try:
-			msg='''
+			msg=f'''
 CEP - {r["cep"]}
 LOGRADOURO - {r['logradouro']}
 COMPLEMENTO - {r['complemento']}
