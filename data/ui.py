@@ -19,7 +19,7 @@ def banner():
         sys.stdout.write(f"{choice(cor)}{char}{Style.RESET_ALL}")
         sys.stdout.flush()
         n +=1
-        time.sleep(0.007)
+        time.sleep(0.002)
 
 def clear():
 	os.system(clean)
