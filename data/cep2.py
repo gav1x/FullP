@@ -1,9 +1,9 @@
 import requests
 from data import ui
 # Api - https://github.com/p0isonBR/ConsultaCPF
-Sair=False
-while(Sair==False):
-	def consultar():
+def consultar():
+	Sair=False
+	while(Sair==False):
 		cep = int(ui.input_dialog1())
 		r = requests.get(url=f'https://viacep.com.br/ws/{cep}/json/')
 		if len(cep)!=8:
@@ -30,4 +30,3 @@ SIAFI - {r['siafi']}
 			Sair=True
 		else:
 			ui.error()
-        
