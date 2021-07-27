@@ -5,7 +5,7 @@
   </a>
 </p>
 
-![Screenshot](https://cdn.discordapp.com/attachments/866286772031324222/866286787144318996/unknown.png)
+![Screenshot](https://cdn.discordapp.com/attachments/866286772031324222/869666625090109460/unknown.png)
 # Instalação💻
 ```
  git clone https://github.com/gav1x/FullP.git
