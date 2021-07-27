@@ -9,11 +9,11 @@ result=os.popen('figlet Gav1x').read()
 def banner():
     cor = [Fore.RED]
     banner = r"""
-====================
+==================================
 - By gav1x
 - GitHub: https://github.com/gav1x
 - Greetz: DevNoias - Mr Osama - Bugea1s - Fz1n - Tr4xb0y - V4p0r
-===================="""
+=================================="""
     n = 0
     for char in banner:
         sys.stdout.write(f"{choice(cor)}{char}{Style.RESET_ALL}")
@@ -26,15 +26,15 @@ def clear():
 
 def menu(ms0):
 	clear();banner();print('\n'+result+ms0)
-	return input(f'\n{C}===> {G}')
+	return input(f'\n{C}λ ► {G}')
 
 def error():
 	text='Caractere(s) não reconhecido(s)';clear();banner();print(f'\n{C}====================\n[{P}Error!{C}] {text}\n====================');time.sleep(3)
 	
 def dialog1():
 	clear();banner();print(result)
-	return input(f'\n{C}===> {G}')
+	return input(f'\n{C}λ ► {G}')
 
 def dialog2(msg):
 	clear();banner()
-	return input(f'\n{C}====================\n{msg}\n====================\n{C}{G}Deseja fazer uma nova consulta?\n{C}[{G}1{C}] Sim\n[{G}2{C}] Nao\n===> {G}')
+	return input(f'\n{C}====================\n{msg}\n====================\n{C}{G}Deseja fazer uma nova consulta?\n{C}[{G}1{C}] Sim\n[{G}2{C}] Nao\nλ ► {G}')
