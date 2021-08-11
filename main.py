@@ -1,4 +1,5 @@
 import os, sys
+# Kiny passou aqui XD
 def restart():
 	python=sys.executable;os.excl(python, python, *sys.argv)
 try:
