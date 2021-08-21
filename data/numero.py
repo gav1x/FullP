@@ -8,7 +8,7 @@ def consultar():
 		if 'A Consulta Esta Funcionando Normalmente' in r:
 			msg='A consulta está funcionando normalmente, porém, o Telefone inserido não foi encontrado.'
 		else:
-			msg=r.replace('<p>', '').replace('<br>', '\n').replace('DDD:', 'DDD: ').replace('NOME:', 'Nome completo: ').replace('FONE:', 'Telefone: ').replace('INST:', 'Data de Compra: ').replace('PESSOA:', 'Pessoa: ').replace('CPF:', 'CPF: ').replace('PESSOA:', 'Pessoa: ')
+			msg=r.replace('<p>', '').replace('<br>', '\n')
 		op=int(ui.dialog2(msg))
 		if op ==1:
 			pass
